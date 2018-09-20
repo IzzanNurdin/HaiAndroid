@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hi Ip</string>
+    <string name="ip_addr">Your IP Address: </string>
+    <string name="ip_value"></string>
+</resources>
