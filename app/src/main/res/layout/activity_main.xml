@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <!-- Tampilan jam -->
     <TextView
         android:id="@+id/clock"
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         android:textSize="20sp"
         android:textStyle="bold"/>
 
+    <!-- Tampilan "Your Wifi IP Address -->
     <TextView
         android:id="@+id/ipAddr"
         android:layout_width="match_parent"
@@ -25,6 +27,7 @@
         android:textAlignment="center"
         android:textSize="20sp"/>
 
+    <!-- Tampilan IP Address yang didapat -->
     <TextView
         android:id="@+id/ipView"
         android:layout_width="match_parent"

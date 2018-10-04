@@ -1,14 +1,12 @@
 package id.ac.ui.cs.mobileprogramming.izzan.hai;
 
-import android.app.Activity;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.format.Formatter;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
 import java.text.SimpleDateFormat;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +29,14 @@ public class MainActivity extends Activity {
                                 clock.setText(dateView);
 
                                 TextView ipView = (TextView) findViewById(R.id.ipView);
-                                WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
-                                String ip = String.valueOf(wm.getConnectionInfo().getIpAddress());
-
-                                ipView.setText(ip);
+                                WifiManager wifiManager;
+                                wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+                                if(wifiManager.getConnectionInfo().getIpAddress() == 0) {
+                                    ipView.setText("Wifi not connected");
+                                } else {
+                                    String ip = String.valueOf(wifiManager.getConnectionInfo().getIpAddress());
+                                    ipView.setText(ip);
+                                }
                             }
                         });
                     }
