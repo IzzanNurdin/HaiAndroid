@@ -1,10 +1,14 @@
 package id.ac.ui.cs.mobileprogramming.izzan.hai;
 
+import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 import java.text.SimpleDateFormat;
+
+import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,5 +49,16 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         thread.start();
+    }
+
+    public void startService(View view) {
+        Intent intent = new Intent(this, MainService.class);
+        startService(intent);
+    }
+
+    public void stopService(View view) {
+        Intent intent = new Intent(this, MainService.class);
+        stopService(intent);
+//        @BindView(R.id.textService)
     }
 }
